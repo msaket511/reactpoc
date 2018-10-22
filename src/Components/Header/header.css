@@ -1,0 +1,28 @@
+.bg-color {
+  background-color: #161a13;
+}
+.color-white {
+  color: #fff;
+}
+.logout-color {
+  color: #ffc107;
+}
+
+.ht50 {
+  height: 50px;
+}
+.avatar-bg-color {
+  background-color: #ffc107;
+}
+.color-black {
+  color: black;
+}
+.wdt50 {
+  width: 50px;
+}
+.wdt100 {
+  width: 100px;
+}
+.font32 {
+  font-size: 32px;
+}

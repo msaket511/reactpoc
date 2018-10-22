@@ -1,26 +1,39 @@
-import React, { Component } from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { Component } from "react";
+import logo from "./logo.svg";
+import "./App.css";
+
+import { BrowserRouter, Switch, Route } from "react-router-dom";
+import Inputbox from "./Components/InputBox/inputbox";
+import Header from "./Components/Header/header";
+import Accordion from "./Components/Accordion/accordion";
+import Footer from "./Components/Footer/footer";
+
+import SignIn from "./Layouts/SignIn/signin";
+import Dashboard from "./Layouts/Dashboard/dashboard";
 
 class App extends Component {
   render() {
     return (
-      <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <p>
-            Edit <code>src/App.js</code> and save to reload.
-          </p>
-          <a
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Learn React
-          </a>
-        </header>
-      </div>
+      <BrowserRouter>
+        <div className="App">
+          {/* <Inputbox labelText="Email" placeHolderText="Type Here" />
+          <Header />
+          <Footer />
+          <Accordion />
+
+           */}
+          <Header />
+
+          <Switch>
+            {/* <Route path="/" component={SignIn} /> */}
+            <Route path="/signIn" component={SignIn} />
+            <Route path="/dashboard" component={Dashboard} />
+          </Switch>
+
+          {/* <SignIn /> */}
+          <Footer />
+        </div>
+      </BrowserRouter>
     );
   }
 }
