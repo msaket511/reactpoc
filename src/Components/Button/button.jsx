@@ -5,7 +5,11 @@ class button extends Component {
   render() {
     return (
       <div className="col-lg-1">
-        <button type="button" className="btn btn-outline-warning">
+        <button
+          type="button"
+          className="btn btn-outline-warning"
+          onClick={this.props.onClick}
+        >
           {this.props.text}
         </button>
       </div>

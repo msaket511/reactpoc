@@ -4,31 +4,13 @@ import Accordion from "../../Components/Accordion/accordion";
 import Button from "../../Components/Button/button";
 import axios from "axios";
 import { connect } from "react-redux";
-import { getUserData } from "../../actions/userAction";
+import { getUserData, getUserDataEdit } from "../../actions/userAction";
 
 class Dashboard extends Component {
   componentDidMount() {
     this.props.getUserData();
   }
-  //   state = {
-  //     user: []
-  //   };
-  //   componentDidMount() {
-  //     axios
-  //       .get("userStub.json")
-  //       .then((response) => {
-  //         // console.log(response.data);
-  //         this.setState({
-  //           user: response.data
-  //         });
-  //         // dispatch({type:'FETCH_USERS_FULFILLED', payload:response.data});
-  //       })
-  //       .catch((err) => {
-  //         console.log(err);
 
-  //         // dispatch({type:'FETCH_USERS_REJECTED', payload:err});
-  //       });
-  //   }
   render() {
     console.log(this.props);
     const { user } = this.props;
@@ -56,7 +38,19 @@ class Dashboard extends Component {
               </div>
             </div>
             <div className="col-sm-3   mb-1 ">
-              <Button text="Edit" />
+              <Button
+                text="Edit"
+                onClick={() => {
+                  this.props.getUserDataEdit(u.id);
+                }}
+              />
+              {/* <button
+                onClick={() => {
+                  this.props.getUserDataEdit(u.id);
+                }}
+              >
+                Edit
+              </button> */}
             </div>
           </div>
         );
@@ -80,7 +74,8 @@ const mapStoreToProps = (state) => {
 };
 const mapDispatchToProps = (dispatch) => {
   return {
-    getUserData: () => dispatch(getUserData())
+    getUserData: () => dispatch(getUserData()),
+    getUserDataEdit: (id) => dispatch(getUserDataEdit(id))
   };
 };
 

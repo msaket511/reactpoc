@@ -10,6 +10,7 @@ import Footer from "./Components/Footer/footer";
 
 import SignIn from "./Layouts/SignIn/signin";
 import Dashboard from "./Layouts/Dashboard/dashboard";
+import UserDetailsEdit from "./Layouts/UserDetailsEdit/userDetailsEdit";
 
 class App extends Component {
   render() {
@@ -28,6 +29,7 @@ class App extends Component {
             {/* <Route path="/" component={SignIn} /> */}
             <Route path="/signIn" component={SignIn} />
             <Route path="/dashboard" component={Dashboard} />
+            <Route path="/userDetailsEdit:user" component={UserDetailsEdit} />
           </Switch>
 
           {/* <SignIn /> */}
